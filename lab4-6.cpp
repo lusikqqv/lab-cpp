@@ -38,7 +38,6 @@ public:
 void change(Cabel& c) {
     c.set(75, 8, 25);
 }
-
 int main() {
     Cabel cabel1;
     Cabel cabel2(50, 6, 10);
@@ -62,3 +61,4 @@ int main() {
 
     return 0;
 }
+
