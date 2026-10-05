@@ -10,6 +10,18 @@ public:
 
     ~Cabel() { cout << "Об'єкт видалено\n"; }
 
+    void input() {
+        cout << "Введіть опір (Ом): ";
+        cin >> z;
+        cout << "Введіть діаметр (мм): ";
+        cin >> d;
+        cout << "Введіть довжину (м): ";
+        cin >> l;
+
+        if (z <= 0 || d <= 0 || l <= 0)
+            cout << "Помилка: значення повинні бути > 0!\n";
+    }
+
     void set(double Z, double D, double L) {
         if (Z > 0) z = Z;
         if (D > 0) d = D;
@@ -32,6 +44,12 @@ int main() {
     Cabel cabel2(50, 6, 10);
 
     cout << "Кабель 1:\n";
+    cabel1.show();
+
+    cout << "\nВведіть дані для кабелю :\n";
+    cabel1.input();
+
+    cout << "\nВведені дані:\n";
     cabel1.show();
 
     cout << "\nКабель 2:\n";
