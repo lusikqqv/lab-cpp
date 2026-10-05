@@ -13,28 +13,46 @@ public:
         cout << "Об'єкт видалено\n";
     }
 
-    void input() {
-        do { cout << "Введіть опір (Ом): ";
-            cin >> z;
-            if (z <= 0)
-                cout << "Помилка! Введіть число > 0.\n";
-        } while (z <= 0);
+  void input() {
+    do {
+        cout << "Введіть опір (Ом): ";
+        cin >> z;
 
-        do {
-            cout << "Введіть діаметр (мм): ";
-            cin >> d;
-            if (d <= 0)
-                cout << "Помилка! Введіть число > 0.\n";
-        } while (d <= 0);
+        if (cin.fail() || z <= 0) {
+            cout << "Помилка! Введіть число > 0.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        } else {
+            break;
+        }
+    } while (true);
 
-        do {
-            cout << "Введіть довжину (м): ";
-            cin >> l;
-            if (l <= 0)
-                cout << "Помилка! Введіть число > 0.\n";
-        } while (l <= 0);
-    }
+    do {
+        cout << "Введіть діаметр (мм): ";
+        cin >> d;
 
+        if (cin.fail() || d <= 0) {
+            cout << "Помилка! Введіть число > 0.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        } else {
+            break;
+        }
+    } while (true);
+
+    do {
+        cout << "Введіть довжину (м): ";
+        cin >> l;
+
+        if (cin.fail() || l <= 0) {
+            cout << "Помилка! Введіть число > 0.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        } else {
+            break;
+        }
+    } while (true);
+}
     void set(double Z, double D, double L) {
         if (Z > 0) z = Z;
         if (D > 0) d = D;
