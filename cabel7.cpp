@@ -1,4 +1,4 @@
-#include "cabeel7.h"
+#include "Coaxialcabel7.h"
 #include <sstream>
 
 CoaxialCable::CoaxialCable() {
