@@ -6,9 +6,10 @@
 #include <string>
 
 struct coaxial_cable_t {
-    double impedance; // Хвильовий опір, Ом
-    double diameter;  // Діаметр, мм
-    double length;    // Довжина, м
+    std::string name;
+    double impedance;
+    double diameter;
+    double length;
 };
 
 class CoaxialCable {
