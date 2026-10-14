@@ -32,8 +32,7 @@ void CoaxialCable::input() {
         std::cout << "\nКабель " << i + 1 << ":\n";
 
         std::cout << "Назва: ";
-        std::cin >> cables[i].name;
-
+        std::getline(std::cin >> std::ws, cables[i].name);
         cables[i].impedance =
             readNumber("Хвильовий опір (Ом): ");
 
