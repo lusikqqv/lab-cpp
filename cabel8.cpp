@@ -1,4 +1,4 @@
-#include "cabel8.h"
+#include "Coaxialcabel8.h"
 #include <limits>
 
 CoaxialCable::CoaxialCable() {
@@ -29,6 +29,9 @@ double CoaxialCable::inputPositive(const std::string& message) {
 void CoaxialCable::add() {
     coaxial_cable_t cable;
 
+    std::cout << "Назва кабелю: ";
+    std::getline(std::cin >> std::ws, cable.name);
+
     cable.impedance = inputPositive("Хвильовий опір (Ом): ");
     cable.diameter = inputPositive("Діаметр (мм): ");
     cable.length = inputPositive("Довжина (м): ");
@@ -45,6 +48,9 @@ void CoaxialCable::insert(int index) {
     }
 
     coaxial_cable_t cable;
+
+    std::cout << "Назва кабелю: ";
+    std::getline(std::cin >> std::ws, cable.name);
 
     cable.impedance = inputPositive("Хвильовий опір (Ом): ");
     cable.diameter = inputPositive("Діаметр (мм): ");
@@ -89,15 +95,11 @@ void CoaxialCable::print() const {
         return;
     }
 
-    std::cout << "\n--- Коаксіальні кабелі ---\n";
-
-    for (size_t i = 0; i < cables.size(); ++i) {
+    for (size_t i = 0; i < cables.size(); i++) {
         std::cout << "\nКабель №" << i + 1 << "\n";
-        std::cout << "Хвильовий опір: "
-                  << cables[i].impedance << " Ом\n";
-        std::cout << "Діаметр: "
-                  << cables[i].diameter << " мм\n";
-        std::cout << "Довжина: "
-                  << cables[i].length << " м\n";
+        std::cout << "Назва: " << cables[i].name << "\n";
+        std::cout << "Хвильовий опір: " << cables[i].impedance << " Ом\n";
+        std::cout << "Діаметр: " << cables[i].diameter << " мм\n";
+        std::cout << "Довжина: " << cables[i].length << " м\n";
     }
 }
